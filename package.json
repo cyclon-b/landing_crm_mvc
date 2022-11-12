@@ -4,7 +4,7 @@
   "description": "simple landing page with admin panel, sqlite and crm",
   "author": "cyclon-b",
   "private": true,
-  "license": "GPL",
+  "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
