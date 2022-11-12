@@ -2,3 +2,4 @@
 /dist/
 /.idea/
 /public_src/node_modules/
+/src/public_src/dist/
