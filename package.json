@@ -1,8 +1,8 @@
 {
-  "name": "app",
+  "name": "nest_mvc_landing",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "simple landing page with admin panel, sqlite and crm",
+  "author": "cyclon-b",
   "private": true,
   "license": "GPL",
   "scripts": {
