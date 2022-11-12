@@ -2,8 +2,10 @@
   "name": "public_src",
   "version": "1.0.0",
   "dependencies": {
-    "ejs": "^3.1.8",
-    "bootstrap": "^5.2.2"
+    "@types/alpinejs": "^3.7.1",
+    "alpinejs": "^3.10.5",
+    "bootstrap": "^5.2.2",
+    "ejs": "^3.1.8"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",
