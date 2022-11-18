@@ -1,8 +1,10 @@
 import Alpine from 'alpinejs';
 
-// Initialize Alpine.js
-(function initAlpine(window: any) {
-  window.Alpine = Alpine;
-})(window);
+export const alpineInit = (window: any): void => {
+    window.Alpine = Alpine;
+    Alpine.start();
+}
 
-Alpine.start();
+
+alpineInit(window);
+

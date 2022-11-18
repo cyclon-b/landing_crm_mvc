@@ -1,0 +1,19 @@
+<div class="col-lg-6 col-xl-4">
+  <div class="card mb-5 mb-xl-0">
+    <div class="card-body p-5">
+      <div class="small text-uppercase fw-bold text-muted"><%= cardData?.pricingTypeText %></div>
+      <div class="mb-3">
+        <span class="display-4 fw-bold"><%= cardData?.priceText %></span>
+      </div>
+      <ul class="list-unstyled mb-4">
+        <% for(let option of cardData?.cardOptionsList) {%>
+        <li class="mb-2 <%= option?.isActive ? 'text-muted' : ''%>">
+          <i class="bi <%= option?.isActive ? 'bi-check' : 'bi-x'%>"></i>
+          <strong><%= option?.optionText %></strong>
+        </li>
+        <% } %>
+      </ul>
+      <div class="d-grid"><a class="btn btn-outline-primary" href="#contacts"><%= cardData?.cardButtonText %></a></div>
+    </div>
+  </div>
+</div>
