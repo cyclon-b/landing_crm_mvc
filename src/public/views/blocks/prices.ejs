@@ -1,17 +1,18 @@
 <!-- Pricing section-->
 <% if (!!data?.pricingSection?.pricingCards){ %>
-    <section id="pricing" class="bg-light py-5 border-bottom">
-        <div class="container px-5 my-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bolder">Pay as you grow</h2>
-                <p class="lead mb-0">With our no hassle pricing plans</p>
-            </div>
-            <div class="row gx-5 justify-content-center">
-                <!-- Pricing cards-->
-                <% for (let card of data?.pricingSection?.pricingCards) { %>
-                    <%- include('components/pricing-card', {cardData: card}); %>
-                <% } %>
-            </div>
-        </div>
-    </section>
+<section id="pricing" class="bg-light py-5 border-bottom">
+  <div class="container px-5 my-5">
+    <div class="text-center mb-5">
+  pricingHeaderText: string;
+      <h2 class="fw-bolder"><%= data?.pricingSection?.pricingHeaderText %> </h2>
+      <p class="lead mb-0"><%= data?.pricingSection?.pricingDescriptionText %></p>
+    </div>
+    <div class="row gx-5 justify-content-center">
+      <!-- Pricing cards-->
+      <% for (let card of data?.pricingSection?.pricingCards) { %>
+      <%- include('components/pricing-card', {cardData: card}); %>
+      <% } %>
+    </div>
+  </div>
+</section>
 <% } %>

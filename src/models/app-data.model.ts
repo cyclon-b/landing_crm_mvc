@@ -1,16 +1,20 @@
 export interface AppDataModel {
-  headerText: HeaderContent;
+  headerContent: HeaderContent;
+  navigationMenu: NavigationMenu;
   contactsSection: ContactsSectionData;
+  footerContent: FooterContent;
   features?: Feature[];
   pricingSection?: PricingSectionData;
   testimonialsSection?: TestimonialsSectionData;
 }
 
 interface HeaderContent {
+  pageTitleText: string;
+  logoText: string;
   mainAdvertiseText: string;
   meinDescriptionText: string;
-  leftButtonText: string;
-  rightButtonText: string;
+  leftButton: NavMenuItem;
+  rightButton: NavMenuItem;
 }
 
 interface Feature {
@@ -20,7 +24,6 @@ interface Feature {
   callToActionText: string;
   featureIconName: string;
 }
-
 
 interface PricingSectionData {
   pricingHeaderText: string;
@@ -55,4 +58,26 @@ interface Testimonial {
 interface ContactsSectionData {
   contactsSectionHeader: string;
   contactsSectionDescription: string;
+  formText: FormText;
+}
+
+interface FormText {
+  fullNameControlLabel: string;
+  emailControlLabel: string;
+  phoneControlLabel: string;
+  messageControlLabel: string;
+  submitButtonText: string;
+}
+
+interface NavigationMenu {
+  navMenuItems: NavMenuItem[];
+}
+
+interface NavMenuItem {
+  linkText: string;
+  linkUrl: string;
+}
+
+interface FooterContent {
+  copyRightName: string;
 }
