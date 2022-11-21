@@ -29,6 +29,22 @@ export class CommonDataEntity extends BaseEntity {
         }
     }
 
+    @Column('simple-json')
+    footerContent: {
+        copyRightName: string;
+    }
+
+    @Column('simple-json')
+    pricingSection: {
+        pricingHeaderText: string;
+        pricingDescriptionText: string;
+    }
+
+    @Column('simple-json')
+    testimonialsSection: {
+        testimonialsHeaderText: string;
+        testimonialsDescriptionText: string;
+    }
 
 
 
