@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, BaseEntity, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, BaseEntity, CreateDateColumn, UpdateDateColumn, JoinColumn, RelationId } from 'typeorm';
 import { PricingCardEntity } from './pricing-card.entity';
 
 @Entity('PricingCardOption')
@@ -18,5 +18,9 @@ export class PricingCardOptionEntity extends BaseEntity {
     updated: string;
 
     @ManyToOne(() => PricingCardEntity, (card) => card.cardOptionsList)
+    @JoinColumn({name: 'cardId'})
     card: PricingCardEntity;
+
+    @Column({nullable: true})
+    cardId: number;
 }

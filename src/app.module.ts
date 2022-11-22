@@ -14,8 +14,8 @@ import { TestimonialEntity } from './entities/testimonial.entity';
 
 
 const DEFAULT_ADMIN = {
-  email: '',
-  password: '',
+  email: 'aaa@aaa.net',
+  password: '111',
 };
 
 const authenticate = async (email: string, password: string) => {
@@ -51,6 +51,10 @@ AdminJS.registerAdapter({
       useFactory: () => ({
         adminJsOptions: {
           rootPath: '/admin',
+          branding: {
+            companyName: 'Simple Landing CRM',
+            logo: ''
+          },
           resources: [NavigationEntity,
             TestimonialEntity,
             FeatureEntity,

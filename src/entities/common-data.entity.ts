@@ -4,49 +4,19 @@ import { Column, BaseEntity, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class CommonDataEntity extends BaseEntity {
     @PrimaryGeneratedColumn() id: string;
 
-    @Column('simple-json')
-    headerContent: {
-        pageTitleText: string,
-        logoText: string,
-        mainAdvertiseText: string,
-        meinDescriptionText: string,
-        leftButton: {
-            linkText: string,
-            linkUrl: string,
-        }
+    @Column()
+    headerContent: string;
 
-    };
-    @Column('simple-json')
-    contactsSection: {
-        contactsSectionHeader: string,
-        contactsSectionDescription: string,
-        formText: {
-            fullNameControlLabel: string,
-            emailControlLabel: string,
-            phoneControlLabel: string,
-            messageControlLabel: string,
-            submitButtonText: string,
-        }
-    }
+    @Column()
+    contactsSection: string;
 
-    @Column('simple-json')
-    footerContent: {
-        copyRightName: string;
-    }
+    @Column()
+    footerContent: string;
 
-    @Column('simple-json')
-    pricingSection: {
-        pricingHeaderText: string;
-        pricingDescriptionText: string;
-    }
+    @Column()
+    pricingSection: string;
 
-    @Column('simple-json')
-    testimonialsSection: {
-        testimonialsHeaderText: string;
-        testimonialsDescriptionText: string;
-    }
-
-
-
+    @Column()
+    testimonialsSection: string;
 
 }
