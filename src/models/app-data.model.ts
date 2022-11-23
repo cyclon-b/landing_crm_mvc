@@ -8,7 +8,7 @@ export interface AppDataModel {
   testimonialsSection?: TestimonialsSectionData;
 }
 
-interface HeaderContent {
+export interface HeaderContent {
   pageTitleText: string;
   logoText: string;
   mainAdvertiseText: string;
@@ -17,7 +17,7 @@ interface HeaderContent {
   rightButton: NavMenuItem;
 }
 
-interface Feature {
+export interface Feature {
   featureTitle: string;
   featureDescription: string;
   callToActionLinkUrl: string;
@@ -25,13 +25,13 @@ interface Feature {
   featureIconName: string;
 }
 
-interface PricingSectionData {
+export interface PricingSectionData {
   pricingHeaderText: string;
   pricingDescriptionText: string;
   pricingCards?: PricingCard[];
 }
 
-interface PricingCard {
+export interface PricingCard {
   pricingTypeText: string;
   priceText: string;
   cardOptionsList: PricingOption[];
@@ -39,29 +39,29 @@ interface PricingCard {
   isFocused: boolean;
 }
 
-interface PricingOption {
+export interface PricingOption {
   optionText: string;
   isActive: boolean;
 }
 
-interface TestimonialsSectionData {
+export interface TestimonialsSectionData {
   testimonialsHeaderText: string;
   testimonialsDescriptionText: string;
   testimonials: Testimonial[];
 }
 
-interface Testimonial {
+export interface Testimonial {
   testimonialText: string;
   customerName?: string;
 }
 
-interface ContactsSectionData {
+export interface ContactsSectionData {
   contactsSectionHeader: string;
   contactsSectionDescription: string;
   formText: FormText;
 }
 
-interface FormText {
+export interface FormText {
   fullNameControlLabel: string;
   emailControlLabel: string;
   phoneControlLabel: string;
@@ -69,15 +69,15 @@ interface FormText {
   submitButtonText: string;
 }
 
-interface NavigationMenu {
+export interface NavigationMenu {
   navMenuItems: NavMenuItem[];
 }
 
-interface NavMenuItem {
+export interface NavMenuItem {
   linkText: string;
   linkUrl: string;
 }
 
-interface FooterContent {
+export interface FooterContent {
   copyRightName: string;
 }

@@ -11,6 +11,7 @@ import { NavigationEntity } from './entities/navigation.entity';
 import { PricingCardOptionEntity } from './entities/pricing-card-option.entity';
 import { PricingCardEntity } from './entities/pricing-card.entity';
 import { TestimonialEntity } from './entities/testimonial.entity';
+import { SharedModule } from './modules/shared/shared.module';
 
 
 const DEFAULT_ADMIN = {
@@ -75,6 +76,7 @@ AdminJS.registerAdapter({
         },
       }),
     }),
+    SharedModule,
   ],
   controllers: [IndexController],
   providers: [],
