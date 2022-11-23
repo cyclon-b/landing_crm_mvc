@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, BaseEntity, CreateDateColumn, UpdateDateColumn, JoinColumn, RelationId } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, BaseEntity, CreateDateColumn, UpdateDateColumn, JoinColumn } from 'typeorm';
 import { PricingCardEntity } from './pricing-card.entity';
 
 @Entity('PricingCardOption')
@@ -8,7 +8,7 @@ export class PricingCardOptionEntity extends BaseEntity {
     @Column()
     optionText: string;
 
-    @Column()
+    @Column({nullable: true})
     isActive: boolean;
 
     @CreateDateColumn()
