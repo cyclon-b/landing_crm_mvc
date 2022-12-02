@@ -11,11 +11,12 @@ import { NavigationEntity } from './entities/navigation.entity';
 import { PricingCardOptionEntity } from './entities/pricing-card-option.entity';
 import { PricingCardEntity } from './entities/pricing-card.entity';
 import { TestimonialEntity } from './entities/testimonial.entity';
+import { SharedModule } from './modules/shared/shared.module';
 
 
 const DEFAULT_ADMIN = {
-  email: '',
-  password: '',
+  email: 'aaa@aaa.net',
+  password: '111',
 };
 
 const authenticate = async (email: string, password: string) => {
@@ -51,6 +52,10 @@ AdminJS.registerAdapter({
       useFactory: () => ({
         adminJsOptions: {
           rootPath: '/admin',
+          branding: {
+            companyName: 'Simple Landing CRM',
+            logo: ''
+          },
           resources: [NavigationEntity,
             TestimonialEntity,
             FeatureEntity,
@@ -71,6 +76,7 @@ AdminJS.registerAdapter({
         },
       }),
     }),
+    SharedModule,
   ],
   controllers: [IndexController],
   providers: [],

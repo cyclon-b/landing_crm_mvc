@@ -7,7 +7,7 @@ export class FeatureEntity extends BaseEntity {
     @Column()
     featureTitle: string;
 
-    @Column()
+    @Column({type: 'text'})
     featureDescription: string;
 
     @Column()
