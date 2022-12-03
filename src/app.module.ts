@@ -1,8 +1,9 @@
+import { AdminModule } from '@adminjs/nestjs';
+import * as AdminJSTypeorm from '@adminjs/typeorm';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AdminModule } from '@adminjs/nestjs';
-import * as AdminJSTypeorm from '@adminjs/typeorm'
-import AdminJS from 'adminjs'
+import AdminJS from 'adminjs';
+import { FeedbackController } from './controllers/feedback/feedback.controller';
 import { IndexController } from './controllers/index/index.controller';
 import { CommonDataEntity } from './entities/common-data.entity';
 import { FeatureEntity } from './entities/feature.entity';
@@ -12,7 +13,6 @@ import { PricingCardOptionEntity } from './entities/pricing-card-option.entity';
 import { PricingCardEntity } from './entities/pricing-card.entity';
 import { TestimonialEntity } from './entities/testimonial.entity';
 import { SharedModule } from './modules/shared/shared.module';
-import { FeedbackController } from './controllers/feedback/feedback.controller';
 
 
 const DEFAULT_ADMIN = {

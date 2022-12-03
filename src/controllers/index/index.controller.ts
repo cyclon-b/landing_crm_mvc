@@ -7,7 +7,6 @@ export class IndexController {
   constructor(private responseBuilder: ResponseDataBuilderService) {}
 
   @Render('index')
-  @HttpCode(200)
   @Get('')
   public async getIndexPage() {
     const data = await lastValueFrom(
