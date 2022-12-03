@@ -7,9 +7,11 @@ const DEFAULT_TESTIMONIALS_COUNT = 3;
 export class TestimonialsService {
   public fetchTestimonials(): Observable<TestimonialEntity[]> {
     return from(
-      TestimonialEntity.find({
-        take: DEFAULT_TESTIMONIALS_COUNT,
-      }),
+      TestimonialEntity.createQueryBuilder()
+        .select()
+        .orderBy('RANDOM()')
+        .take(DEFAULT_TESTIMONIALS_COUNT)
+        .getMany(),
     );
   }
 }

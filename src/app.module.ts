@@ -12,6 +12,7 @@ import { PricingCardOptionEntity } from './entities/pricing-card-option.entity';
 import { PricingCardEntity } from './entities/pricing-card.entity';
 import { TestimonialEntity } from './entities/testimonial.entity';
 import { SharedModule } from './modules/shared/shared.module';
+import { FeedbackController } from './controllers/feedback/feedback.controller';
 
 
 const DEFAULT_ADMIN = {
@@ -78,7 +79,7 @@ AdminJS.registerAdapter({
     }),
     SharedModule,
   ],
-  controllers: [IndexController],
+  controllers: [IndexController, FeedbackController],
   providers: [],
 })
 export class AppModule { }

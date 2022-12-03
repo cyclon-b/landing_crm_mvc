@@ -11,6 +11,16 @@ export class PricingCardEntity extends BaseEntity {
     @Column()
     priceText: string;
 
+    @Column({
+        nullable: true
+    })
+    cardButtonText: string;
+
+    @Column({
+        nullable: true
+    })
+    isFocused: boolean;
+
     @CreateDateColumn()
     created: string;
 
