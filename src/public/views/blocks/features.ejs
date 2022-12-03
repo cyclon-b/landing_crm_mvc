@@ -3,7 +3,7 @@
     <section class="py-5 border-bottom" id="features">
         <div class="container px-5 my-5">
             <div class="row gx-5">
-                <% for(let feature of !!data?.features) { %>
+                <% for(let feature of data?.features) { %>
                     <%- include('components/feature', {featureData: feature}); %>
                 <% } %>
             </div>

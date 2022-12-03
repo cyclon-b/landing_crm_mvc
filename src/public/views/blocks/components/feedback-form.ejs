@@ -1,33 +1,79 @@
 <div class="row gx-5 justify-content-center">
   <div class="col-lg-6">
-    <form class="needs-validation" id="contactForm">
+    <form
+      x-data="feedBackForm()"
+      method="post"
+      @submit.prevent="submitForm"
+      class="needs-validation"
+      id="contactForm"
+    >
       <!-- Name input-->
       <div class="form-floating mb-3">
-        <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
+        <input
+          class="form-control"
+          name="name"
+          id="name"
+          x-model="formData.name"
+          type="text"
+          placeholder="Enter your name..."
+          required
+        />
         <label for="name"><%= formContent?.fullNameControlLabel %></label>
       </div>
       <!-- Email address input-->
       <div class="form-floating mb-3">
-        <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+        <input
+          class="form-control"
+          name="email"
+          id="email"
+          type="email"
+          x-model="formData.email"
+          placeholder="name@example.com"
+          required
+        />
         <label for="email"><%= formContent?.emailControlLabel %></label>
       </div>
       <!-- Phone number input-->
       <div class="form-floating mb-3">
-        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" required />
+        <input
+          class="form-control"
+          name="phone"
+          id="phone"
+          type="tel"
+          x-model="formData.phone"
+          placeholder="(123) 456-7890"
+          required
+        />
         <label for="phone"><%= formContent?.phoneControlLabel %></label>
       </div>
       <!-- Message input-->
       <div class="form-floating mb-3">
-        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+        <textarea
+          class="form-control"
+          name="message"
+          id="message"
+          type="text"
+          x-model="formData.message"
+          placeholder="Enter your message here..."
+          style="height: 10rem"
+          required
+        ></textarea>
         <label for="message"><%= formContent?.messageControlLabel %></label>
       </div>
 
       <div class="d-none" id="submitErrorMessage">
-        <div class="text-center text-danger mb-3">Error sending message!</div>
+        <div x-text="formMessage" class="text-center text-danger mb-3"></div>
       </div>
       <!-- Submit Button-->
       <div class="d-grid">
-        <button class="btn btn-primary btn-lg" id="submitButton" type="submit"><%= formContent?.submitButtonText %></button>
+        <button
+          :disabled="formLoading"
+          class="btn btn-primary btn-lg"
+          id="submitButton"
+          type="submit"
+        >
+          <%= formContent?.submitButtonText %>
+        </button>
       </div>
     </form>
   </div>

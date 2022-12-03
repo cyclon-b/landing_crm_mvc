@@ -1,8 +1,9 @@
+import { AdminModule } from '@adminjs/nestjs';
+import * as AdminJSTypeorm from '@adminjs/typeorm';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AdminModule } from '@adminjs/nestjs';
-import * as AdminJSTypeorm from '@adminjs/typeorm'
-import AdminJS from 'adminjs'
+import AdminJS from 'adminjs';
+import { FeedbackController } from './controllers/feedback/feedback.controller';
 import { IndexController } from './controllers/index/index.controller';
 import { CommonDataEntity } from './entities/common-data.entity';
 import { FeatureEntity } from './entities/feature.entity';
@@ -78,7 +79,7 @@ AdminJS.registerAdapter({
     }),
     SharedModule,
   ],
-  controllers: [IndexController],
+  controllers: [IndexController, FeedbackController],
   providers: [],
 })
 export class AppModule { }
