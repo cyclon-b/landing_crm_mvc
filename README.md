@@ -8,7 +8,7 @@
 
 ## Description
 
-You can deploy it just with Node or using Docker as well all configuration is provided
+You can deploy it just with Node, all configuration is provided
 
 ## Installation
 
