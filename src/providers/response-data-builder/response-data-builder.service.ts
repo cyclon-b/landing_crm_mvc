@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { forkJoin, map, Observable, tap } from 'rxjs';
+import { forkJoin, map, Observable, takeLast, tap } from 'rxjs';
 import { CommonDataService } from 'src/providers/common-data/common-data.service';
 import { FeaturesService } from './../features/features.service';
 import { NavigationMenuService } from './../navigation-menu/navigation-menu.service';
@@ -25,6 +25,7 @@ export class ResponseDataBuilderService {
       this.pricingCards.fetchPricingCards(),
       this.testimonials.fetchTestimonials(),
     ]).pipe(
+      takeLast(1),
       map((result) => {
         const data = {} as AppDataModel;
         data.headerContent = JSON.parse(result[0][0].headerContent);
